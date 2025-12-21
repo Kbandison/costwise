@@ -1,0 +1,419 @@
+{
+  "dataYear": 2023,
+  "generatedAt": "2025-12-17T16:31:06.675Z",
+  "colorScale": {
+    "min": 86,
+    "max": 113,
+    "midpoint": 100
+  },
+  "states": {
+    "CA": {
+      "name": "California",
+      "col": 112.581,
+      "housing": 157.839,
+      "goods": 107.53,
+      "services": 104.826,
+      "rank": 1
+    },
+    "DC": {
+      "name": "District of Columbia",
+      "col": 110.804,
+      "housing": 168.539,
+      "goods": 105.87,
+      "services": 102.521,
+      "rank": 2
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "col": 108.883,
+      "housing": 134.101,
+      "goods": 107.135,
+      "services": 103.638,
+      "rank": 3
+    },
+    "HI": {
+      "name": "Hawaii",
+      "col": 108.609,
+      "housing": 128.89,
+      "goods": 106.907,
+      "services": 101.857,
+      "rank": 4
+    },
+    "WA": {
+      "name": "Washington",
+      "col": 108.562,
+      "housing": 125.507,
+      "goods": 106.679,
+      "services": 106.116,
+      "rank": 5
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "col": 108.238,
+      "housing": 130.13,
+      "goods": 102.413,
+      "services": 104.698,
+      "rank": 6
+    },
+    "NY": {
+      "name": "New York",
+      "col": 107.626,
+      "housing": 121.919,
+      "goods": 106.23,
+      "services": 103.943,
+      "rank": 7
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "col": 105.345,
+      "housing": 114.615,
+      "goods": 100.113,
+      "services": 104.785,
+      "rank": 8
+    },
+    "OR": {
+      "name": "Oregon",
+      "col": 104.721,
+      "housing": 108.96,
+      "goods": 104.556,
+      "services": 104.199,
+      "rank": 9
+    },
+    "MD": {
+      "name": "Maryland",
+      "col": 103.965,
+      "housing": 119.879,
+      "goods": 102.939,
+      "services": 99.805,
+      "rank": 10
+    },
+    "CT": {
+      "name": "Connecticut",
+      "col": 103.689,
+      "housing": 116.815,
+      "goods": 97.372,
+      "services": 102.639,
+      "rank": 11
+    },
+    "FL": {
+      "name": "Florida",
+      "col": 103.452,
+      "housing": 123.063,
+      "goods": 98.417,
+      "services": 101.207,
+      "rank": 12
+    },
+    "AK": {
+      "name": "Alaska",
+      "col": 101.715,
+      "housing": 96.643,
+      "goods": 100.372,
+      "services": 103.313,
+      "rank": 13
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "col": 101.412,
+      "housing": 102.35,
+      "goods": 96.766,
+      "services": 102.458,
+      "rank": 14
+    },
+    "CO": {
+      "name": "Colorado",
+      "col": 101.382,
+      "housing": 130.532,
+      "goods": 98.118,
+      "services": 96.241,
+      "rank": 15
+    },
+    "AZ": {
+      "name": "Arizona",
+      "col": 101.105,
+      "housing": 108.58,
+      "goods": 97.472,
+      "services": 102.263,
+      "rank": 16
+    },
+    "VA": {
+      "name": "Virginia",
+      "col": 100.749,
+      "housing": 105.537,
+      "goods": 100.298,
+      "services": 99.953,
+      "rank": 17
+    },
+    "DE": {
+      "name": "Delaware",
+      "col": 99.253,
+      "housing": 98.942,
+      "goods": 98.363,
+      "services": 99.682,
+      "rank": 18
+    },
+    "IL": {
+      "name": "Illinois",
+      "col": 98.855,
+      "housing": 92.399,
+      "goods": 100.879,
+      "services": 100.462,
+      "rank": 19
+    },
+    "MN": {
+      "name": "Minnesota",
+      "col": 98.417,
+      "housing": 90.622,
+      "goods": 101.841,
+      "services": 99.335,
+      "rank": 20
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "col": 97.5,
+      "housing": 85.787,
+      "goods": 99.243,
+      "services": 99.138,
+      "rank": 21
+    },
+    "TX": {
+      "name": "Texas",
+      "col": 97.175,
+      "housing": 97.436,
+      "goods": 98.412,
+      "services": 96.419,
+      "rank": 22
+    },
+    "ME": {
+      "name": "Maine",
+      "col": 97.097,
+      "housing": 80.445,
+      "goods": 96.562,
+      "services": 103.025,
+      "rank": 23
+    },
+    "NV": {
+      "name": "Nevada",
+      "col": 96.98,
+      "housing": 113.327,
+      "goods": 94.587,
+      "services": 94.105,
+      "rank": 24
+    },
+    "GA": {
+      "name": "Georgia",
+      "col": 96.699,
+      "housing": 88.252,
+      "goods": 98.332,
+      "services": 98.661,
+      "rank": 25
+    },
+    "VT": {
+      "name": "Vermont",
+      "col": 96.635,
+      "housing": 82.013,
+      "goods": 96.273,
+      "services": 101.378,
+      "rank": 26
+    },
+    "UT": {
+      "name": "Utah",
+      "col": 95.002,
+      "housing": 106.232,
+      "goods": 93.018,
+      "services": 94.365,
+      "rank": 27
+    },
+    "MI": {
+      "name": "Michigan",
+      "col": 94.184,
+      "housing": 78.886,
+      "goods": 95.385,
+      "services": 98.423,
+      "rank": 28
+    },
+    "NC": {
+      "name": "North Carolina",
+      "col": 94.139,
+      "housing": 80.837,
+      "goods": 96.458,
+      "services": 98.136,
+      "rank": 29
+    },
+    "SC": {
+      "name": "South Carolina",
+      "col": 93.177,
+      "housing": 80.469,
+      "goods": 95.554,
+      "services": 97.404,
+      "rank": 30
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "col": 93.097,
+      "housing": 78.278,
+      "goods": 93.601,
+      "services": 98.214,
+      "rank": 31
+    },
+    "TN": {
+      "name": "Tennessee",
+      "col": 92.515,
+      "housing": 77.87,
+      "goods": 94.775,
+      "services": 97.6,
+      "rank": 32
+    },
+    "IN": {
+      "name": "Indiana",
+      "col": 92.184,
+      "housing": 71.368,
+      "goods": 94.829,
+      "services": 98.066,
+      "rank": 33
+    },
+    "OH": {
+      "name": "Ohio",
+      "col": 91.812,
+      "housing": 72.08,
+      "goods": 93.356,
+      "services": 97.808,
+      "rank": 34
+    },
+    "MO": {
+      "name": "Missouri",
+      "col": 91.762,
+      "housing": 70.433,
+      "goods": 97.699,
+      "services": 95.213,
+      "rank": 35
+    },
+    "ID": {
+      "name": "Idaho",
+      "col": 91.425,
+      "housing": 86.728,
+      "goods": 93.992,
+      "services": 93.049,
+      "rank": 36
+    },
+    "WY": {
+      "name": "Wyoming",
+      "col": 90.848,
+      "housing": 75.925,
+      "goods": 94.829,
+      "services": 94.668,
+      "rank": 37
+    },
+    "KY": {
+      "name": "Kentucky",
+      "col": 90.468,
+      "housing": 62.885,
+      "goods": 95.059,
+      "services": 98.372,
+      "rank": 38
+    },
+    "NM": {
+      "name": "New Mexico",
+      "col": 90.386,
+      "housing": 75.264,
+      "goods": 95.413,
+      "services": 93.686,
+      "rank": 39
+    },
+    "NE": {
+      "name": "Nebraska",
+      "col": 90.376,
+      "housing": 74.313,
+      "goods": 95.26,
+      "services": 92.68,
+      "rank": 40
+    },
+    "MT": {
+      "name": "Montana",
+      "col": 90.244,
+      "housing": 76.743,
+      "goods": 94.29,
+      "services": 93.451,
+      "rank": 41
+    },
+    "AL": {
+      "name": "Alabama",
+      "col": 89.97,
+      "housing": 61.563,
+      "goods": 95.064,
+      "services": 98.687,
+      "rank": 42
+    },
+    "KS": {
+      "name": "Kansas",
+      "col": 89.965,
+      "housing": 68.577,
+      "goods": 94.797,
+      "services": 94.098,
+      "rank": 43
+    },
+    "WV": {
+      "name": "West Virginia",
+      "col": 89.772,
+      "housing": 56.134,
+      "goods": 95.721,
+      "services": 99.502,
+      "rank": 44
+    },
+    "IA": {
+      "name": "Iowa",
+      "col": 88.767,
+      "housing": 65.995,
+      "goods": 95.07,
+      "services": 93.114,
+      "rank": 45
+    },
+    "ND": {
+      "name": "North Dakota",
+      "col": 88.572,
+      "housing": 69.363,
+      "goods": 95.919,
+      "services": 90.401,
+      "rank": 46
+    },
+    "LA": {
+      "name": "Louisiana",
+      "col": 88.345,
+      "housing": 65.091,
+      "goods": 92.047,
+      "services": 95.349,
+      "rank": 47
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "col": 88.286,
+      "housing": 65.005,
+      "goods": 92.19,
+      "services": 95.414,
+      "rank": 48
+    },
+    "SD": {
+      "name": "South Dakota",
+      "col": 88.095,
+      "housing": 64.873,
+      "goods": 96.069,
+      "services": 91.807,
+      "rank": 49
+    },
+    "MS": {
+      "name": "Mississippi",
+      "col": 87.292,
+      "housing": 54.899,
+      "goods": 94.873,
+      "services": 98.201,
+      "rank": 50
+    },
+    "AR": {
+      "name": "Arkansas",
+      "col": 86.508,
+      "housing": 56.669,
+      "goods": 92.135,
+      "services": 95.26,
+      "rank": 51
+    }
+  }
+}
