@@ -126,7 +126,7 @@ export async function getGasolinePricesByState(): Promise<{
   cached: boolean;
   cacheAge?: number;
 }> {
-  const cacheKey = generateCacheKey(APISource.EIA, "gasoline-prices", {});
+  const cacheKey = generateCacheKey(APISource.EIA, "gasoline-prices-v2", {});
 
   // Endpoint: petroleum/pri/gnd (gasoline and diesel prices)
   // EMM_EPM0_PTE_R: Regular gasoline, price to end users, by region
@@ -229,7 +229,7 @@ export async function getNaturalGasPricesByState(): Promise<{
   cached: boolean;
   cacheAge?: number;
 }> {
-  const cacheKey = generateCacheKey(APISource.EIA, "naturalgas-prices", {});
+  const cacheKey = generateCacheKey(APISource.EIA, "naturalgas-prices-v2", {});
 
   // Endpoint: natural-gas/pri/sum
   const url = buildEIAUrl("natural-gas/pri/sum/data", {
@@ -440,20 +440,26 @@ export async function getAllStateEnergyPrices(): Promise<{
       let gasolineSum = 0;
       let gasolineCount = 0;
 
-      electricityResult.data.forEach((price) => {
-        electricitySum += price;
-        electricityCount++;
-      });
+      if (electricityResult?.data) {
+        Object.values(electricityResult.data).forEach((price) => {
+          electricitySum += price;
+          electricityCount++;
+        });
+      }
 
-      gasResult.data.forEach((price) => {
-        gasSum += price;
-        gasCount++;
-      });
+      if (gasResult?.data) {
+        Object.values(gasResult.data).forEach((price) => {
+          gasSum += price;
+          gasCount++;
+        });
+      }
 
-      gasolineResult.data.forEach((price) => {
-        gasolineSum += price;
-        gasolineCount++;
-      });
+      if (gasolineResult?.data) {
+        Object.values(gasolineResult.data).forEach((price) => {
+          gasolineSum += price;
+          gasolineCount++;
+        });
+      }
 
       const electricityNationalAvg =
         electricityCount > 0 ? electricitySum / electricityCount : 0;
@@ -463,9 +469,9 @@ export async function getAllStateEnergyPrices(): Promise<{
       const currentDate = new Date();
       const results: EnergyPrices[] = [];
 
-      electricityResult.data.forEach((electricityPrice, stateCode) => {
-        const naturalGasPrice = gasResult.data.get(stateCode);
-        const gasolinePrice = gasolineResult.data.get(stateCode);
+      Object.entries(electricityResult.data).forEach(([stateCode, electricityPrice]) => {
+        const naturalGasPrice = gasResult.data[stateCode];
+        const gasolinePrice = gasolineResult.data[stateCode];
 
         results.push({
           stateCode,
