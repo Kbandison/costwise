@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next"
-import { Geist, Geist_Mono } from "next/font/google";
-import { Navbar } from "@/components/navigation/navbar";
+import { Analytics } from "@vercel/analytics/next";
+import { Space_Grotesk, Outfit, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
+import { ClientProviders } from "./client-providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display-family",
   subsets: ["latin"],
+  weight: ["500", "700"],
+});
+
+const outfit = Outfit({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
 });
 
 const geistMono = Geist_Mono({
@@ -87,10 +96,14 @@ export default function RootLayout({
     <html lang="en">
       <Analytics />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${outfit.variable} ${geistMono.variable} antialiased`}
+        style={{ fontFamily: "var(--font-body)" }}
       >
-        <Navbar />
-        {children}
+        <ClientProviders>
+          <Navbar />
+          <main className="relative z-[1]">{children}</main>
+          <Footer />
+        </ClientProviders>
       </body>
     </html>
   );

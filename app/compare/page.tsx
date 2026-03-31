@@ -103,75 +103,76 @@ export default function ComparePage() {
     : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-black to-black">
+    <div className="min-h-screen pt-16">
       {/* Header */}
-      <div className="border-b border-white/5">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Home
-            </Link>
+      <section className="border-b border-[var(--lux-border)]">
+        <div className="lux-container py-12 md:py-20">
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-8"
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            Back to Home
+          </Link>
 
+          <div className="flex items-end justify-between">
+            <div>
+              <span className="lux-label mb-3 block">Side-by-side</span>
+              <h1
+                className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--text-primary)]"
+                style={{ fontFamily: "var(--font-display-family)" }}
+              >
+                Compare Locations
+              </h1>
+            </div>
             {locations.length > 0 && (
               <button
                 onClick={() => setLocations([])}
-                className="text-sm text-gray-400 transition-colors hover:text-white"
+                className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
               >
                 Clear All
               </button>
             )}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* Page Title */}
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">
-            Compare Locations
-          </h1>
-          <p className="mt-2 text-lg text-gray-400">
-            Side-by-side cost of living comparison
-          </p>
-        </div>
-
+      <div className="lux-container py-12">
         {/* Location Selection */}
         <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {locations.map((location) => (
             <div
               key={location.code}
-              className="glass-card relative rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl"
+              className="relative p-6 border border-[var(--lux-border)] rounded-2xl bg-[var(--bg-secondary)]"
             >
               <button
                 onClick={() => removeLocation(location.code)}
-                className="absolute right-2 top-2 rounded-lg bg-red-500/20 p-1.5 text-red-400 transition-colors hover:bg-red-500/30"
+                className="absolute right-3 top-3 rounded-lg bg-red-500/10 p-1.5 text-red-400 transition-colors hover:bg-red-500/20"
               >
                 <X className="h-4 w-4" />
               </button>
-
-              <h3 className="text-lg font-semibold text-white">
+              <h3
+                className="text-lg font-semibold text-[var(--text-primary)]"
+                style={{ fontFamily: "var(--font-display-family)" }}
+              >
                 {location.data.name}
               </h3>
-              <p className="text-sm text-gray-400">
-                COL: {location.data.col.toFixed(1)}
+              <p className="text-sm text-[var(--text-secondary)] mt-1">
+                COL Index: {location.data.col.toFixed(1)}
               </p>
             </div>
           ))}
 
-          {/* Add Location Button */}
           {locations.length < 3 && (
             <button
               onClick={() => setShowSearch(true)}
-              className="glass-card flex min-h-[100px] items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 backdrop-blur-xl transition-all hover:border-purple-500/50 hover:bg-white/10"
+              className="flex min-h-[100px] items-center justify-center rounded-2xl border border-dashed border-[var(--lux-border)] bg-[var(--bg-secondary)] transition-all hover:border-[var(--lux-accent)]/50"
             >
               <div className="text-center">
-                <Plus className="mx-auto h-8 w-8 text-gray-400" />
-                <p className="mt-2 text-sm text-gray-400">Add Location</p>
+                <Plus className="mx-auto h-8 w-8 text-[var(--text-dim)]" />
+                <p className="mt-2 text-sm text-[var(--text-secondary)]">
+                  Add Location
+                </p>
               </div>
             </button>
           )}
@@ -179,14 +180,14 @@ export default function ComparePage() {
 
         {/* Search Modal */}
         {showSearch && (
-          <div className="mb-8 glass-card rounded-xl border border-white/10 bg-black/60 p-6 backdrop-blur-xl">
+          <div className="mb-8 rounded-2xl border border-[var(--lux-border)] bg-[var(--bg-secondary)] p-6">
             <div className="relative">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for a state..."
-                className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 focus:border-purple-500/50 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                className="w-full rounded-xl border border-[var(--lux-border)] bg-[var(--bg-primary)] px-4 py-3 text-[var(--text-primary)] placeholder-[var(--text-dim)] focus:border-[var(--lux-accent)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--lux-accent)]/20"
                 autoFocus
               />
               <button
@@ -194,7 +195,7 @@ export default function ComparePage() {
                   setShowSearch(false);
                   setSearchQuery("");
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -206,11 +207,13 @@ export default function ComparePage() {
                   <button
                     key={code}
                     onClick={() => addLocation(code)}
-                    className="w-full rounded-lg border border-white/5 bg-white/5 p-3 text-left transition-colors hover:border-purple-500/30 hover:bg-white/10"
+                    className="w-full rounded-xl border border-[var(--lux-border)] bg-[var(--bg-primary)] p-3 text-left transition-all hover:border-[var(--lux-accent)]/30"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-medium text-white">{data.name}</span>
-                      <span className="text-sm text-gray-400">
+                      <span className="font-medium text-[var(--text-primary)]">
+                        {data.name}
+                      </span>
+                      <span className="text-sm text-[var(--text-secondary)]">
                         COL: {data.col.toFixed(1)}
                       </span>
                     </div>
@@ -224,26 +227,26 @@ export default function ComparePage() {
         {/* Comparison Table */}
         {locations.length >= 2 ? (
           <div className="space-y-8">
-            {/* Overall Summary */}
-            <div className="glass-card overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-purple-950/20 to-black/40 backdrop-blur-xl">
+            <div className="overflow-hidden rounded-2xl border border-[var(--lux-border)] bg-[var(--bg-secondary)]">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-white/10">
-                      <th className="px-6 py-4 text-left text-sm font-medium text-gray-400">
+                    <tr className="border-b border-[var(--lux-border)]">
+                      <th className="px-6 py-4 text-left text-sm font-medium text-[var(--text-secondary)]">
                         Metric
                       </th>
                       {locations.map((location) => (
                         <th
                           key={location.code}
-                          className="px-6 py-4 text-center text-sm font-medium text-white"
+                          className="px-6 py-4 text-center text-sm font-medium text-[var(--text-primary)]"
+                          style={{ fontFamily: "var(--font-display-family)" }}
                         >
                           {location.data.name}
                         </th>
                       ))}
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5">
+                  <tbody className="divide-y divide-[var(--lux-border)]">
                     {[
                       { label: "Overall COL", key: "col" as const, icon: TrendingUp },
                       { label: "Housing", key: "housing" as const, icon: Home },
@@ -253,11 +256,13 @@ export default function ComparePage() {
                     ].map((metric) => {
                       const Icon = metric.icon;
                       return (
-                        <tr key={metric.key} className="hover:bg-white/5">
+                        <tr key={metric.key} className="hover:bg-[var(--bg-tertiary)]/50 transition-colors">
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-2">
-                              {Icon && <Icon className="h-4 w-4 text-gray-400" />}
-                              <span className="text-sm font-medium text-gray-300">
+                              {Icon && (
+                                <Icon className="h-4 w-4 text-[var(--text-dim)]" />
+                              )}
+                              <span className="text-sm font-medium text-[var(--text-secondary)]">
                                 {metric.label}
                               </span>
                             </div>
@@ -280,8 +285,14 @@ export default function ComparePage() {
                                 <div className="space-y-1">
                                   <div
                                     className={`text-lg font-semibold ${
-                                      isRank ? "text-white" : colorClass
+                                      isRank
+                                        ? "text-[var(--text-primary)]"
+                                        : colorClass
                                     }`}
+                                    style={{
+                                      fontFamily: "var(--font-display-family)",
+                                      fontVariantNumeric: "tabular-nums",
+                                    }}
                                   >
                                     {isRank ? `#${value}` : value.toFixed(1)}
                                   </div>
@@ -313,11 +324,14 @@ export default function ComparePage() {
 
             {/* Difference Analysis */}
             {locations.length === 2 && (
-              <div className="glass-card rounded-2xl border border-white/10 bg-gradient-to-br from-purple-950/20 to-black/40 p-6 backdrop-blur-xl">
-                <h2 className="mb-6 text-2xl font-bold text-white">
+              <div className="rounded-2xl border border-[var(--lux-border)] bg-[var(--bg-secondary)] p-6 md:p-8">
+                <h2
+                  className="mb-6 text-2xl font-bold text-[var(--text-primary)]"
+                  style={{ fontFamily: "var(--font-display-family)" }}
+                >
                   Cost Difference
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
                     { label: "Overall COL", key: "col" as const },
                     { label: "Housing", key: "housing" as const },
@@ -334,14 +348,14 @@ export default function ComparePage() {
                     return (
                       <div
                         key={metric.key}
-                        className="flex items-center justify-between rounded-lg border border-white/5 bg-white/5 p-4"
+                        className="flex items-center justify-between rounded-xl border border-[var(--lux-border)] bg-[var(--bg-primary)] p-4"
                       >
-                        <span className="text-sm font-medium text-gray-300">
+                        <span className="text-sm font-medium text-[var(--text-secondary)]">
                           {metric.label}
                         </span>
                         <div
                           className={`flex items-center gap-2 ${
-                            isHigher ? "text-red-400" : "text-green-400"
+                            isHigher ? "text-red-400" : "text-emerald-400"
                           }`}
                         >
                           {isHigher ? (
@@ -349,9 +363,13 @@ export default function ComparePage() {
                           ) : (
                             <TrendingDown className="h-4 w-4" />
                           )}
-                          <span className="font-semibold">
+                          <span
+                            className="font-semibold"
+                            style={{ fontVariantNumeric: "tabular-nums" }}
+                          >
                             {isHigher ? "+" : ""}
-                            {diff.toFixed(1)} ({formatPercentage(Math.abs(percentDiff))})
+                            {diff.toFixed(1)} (
+                            {formatPercentage(Math.abs(percentDiff))})
                           </span>
                         </div>
                       </div>
@@ -359,14 +377,14 @@ export default function ComparePage() {
                   })}
                 </div>
 
-                <div className="mt-6 rounded-lg bg-purple-500/10 p-4">
-                  <p className="text-sm text-gray-300">
+                <div className="mt-6 rounded-xl bg-[var(--lux-accent)]/10 border border-[var(--lux-accent)]/20 p-4">
+                  <p className="text-sm text-[var(--text-secondary)]">
                     {locations[1].data.name} is{" "}
                     <span
                       className={
                         locations[1].data.col > locations[0].data.col
                           ? "font-semibold text-red-400"
-                          : "font-semibold text-green-400"
+                          : "font-semibold text-emerald-400"
                       }
                     >
                       {Math.abs(
@@ -386,13 +404,18 @@ export default function ComparePage() {
             )}
           </div>
         ) : (
-          <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-12 text-center backdrop-blur-xl">
-            <TrendingUp className="mx-auto h-16 w-16 text-gray-600" />
-            <h3 className="mt-4 text-xl font-semibold text-gray-400">
+          <div className="rounded-2xl border border-[var(--lux-border)] bg-[var(--bg-secondary)] p-12 text-center">
+            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--bg-tertiary)] flex items-center justify-center">
+              <TrendingUp className="w-8 h-8 text-[var(--text-dim)]" />
+            </div>
+            <h3
+              className="text-xl font-semibold text-[var(--text-primary)] mb-2"
+              style={{ fontFamily: "var(--font-display-family)" }}
+            >
               Add at least 2 locations to compare
             </h3>
-            <p className="mt-2 text-gray-500">
-              Click the "Add Location" button to get started
+            <p className="text-sm text-[var(--text-secondary)]">
+              Click the &ldquo;Add Location&rdquo; button to get started
             </p>
           </div>
         )}

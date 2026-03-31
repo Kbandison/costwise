@@ -3,11 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================
+   LuxWeb Design Tokens - CostWise
+   DESIGN_VARIANCE: 8 | MOTION_INTENSITY: 8 | VISUAL_DENSITY: 5
+   ============================================ */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-body);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display-family);
+
+  /* Shadcn theme tokens */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -47,85 +55,124 @@
 }
 
 :root {
+  /* LuxWeb Design Tokens */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1A1A1A;
+  --text-primary: #E8E8E8;
+  --text-secondary: #888888;
+  --text-dim: #444444;
+  --lux-accent: #8B5CF6;
+  --lux-accent-hover: #A78BFA;
+  --lux-accent-glow: rgba(139, 92, 246, 0.12);
+  --lux-border: #1F1F1F;
+  --glow: rgba(139, 92, 246, 0.12);
+
+  /* Shadcn tokens mapped to LuxWeb */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: #0A0A0A;
+  --foreground: #E8E8E8;
+  --card: #111111;
+  --card-foreground: #E8E8E8;
+  --popover: #111111;
+  --popover-foreground: #E8E8E8;
+  --primary: #8B5CF6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #E8E8E8;
+  --muted: #1A1A1A;
+  --muted-foreground: #888888;
+  --accent: #1A1A1A;
+  --accent-foreground: #E8E8E8;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --border: #1F1F1F;
+  --input: #1F1F1F;
+  --ring: #8B5CF6;
+  --chart-1: #8B5CF6;
+  --chart-2: #06B6D4;
+  --chart-3: #10B981;
+  --chart-4: #F59E0B;
+  --chart-5: #EF4444;
+  --sidebar: #111111;
+  --sidebar-foreground: #E8E8E8;
+  --sidebar-primary: #8B5CF6;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #E8E8E8;
+  --sidebar-border: #1F1F1F;
+  --sidebar-ring: #8B5CF6;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
+/* ============================================
+   Base Styles
+   ============================================ */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: var(--lux-accent);
+    color: white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--lux-border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--lux-border) var(--bg-primary);
   }
 }
 
-/* Glassomorphic Card Styles */
+/* ============================================
+   Component Styles
+   ============================================ */
+
 @layer components {
+  /* LuxWeb Card */
+  .lux-card {
+    @apply relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--lux-border);
+    border-radius: 1rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .lux-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.1), 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Glass Card (legacy support) */
   .glass-card {
     @apply relative backdrop-blur-xl;
     background: linear-gradient(
@@ -142,68 +189,108 @@
       rgba(255, 255, 255, 0.02) 100%
     );
   }
+
+  /* LuxWeb Button - Primary */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full text-sm font-medium;
+    background: var(--lux-accent);
+    color: white;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-primary:hover {
+    background: var(--lux-accent-hover);
+    transform: scale(1.03) translateY(-1px);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
+  }
+
+  /* LuxWeb Button - Secondary */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full text-sm font-medium;
+    border: 1px solid var(--lux-border);
+    color: var(--text-primary);
+    padding: 0.875rem 2rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-secondary:hover {
+    background: var(--lux-accent);
+    border-color: var(--lux-accent);
+    color: white;
+  }
+
+  /* Section wrapper */
+  .lux-section {
+    @apply relative overflow-hidden;
+    padding: 6rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .lux-section {
+      padding: 8rem 0;
+    }
+  }
+
+  .lux-container {
+    @apply mx-auto px-6;
+    max-width: 80rem;
+  }
+
+  @media (min-width: 768px) {
+    .lux-container {
+      @apply px-8;
+    }
+  }
+
+  /* Label style */
+  .lux-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--lux-accent);
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    @apply animate-pulse rounded-lg;
+    background: var(--bg-tertiary);
+  }
 }
 
-/* Background Grid Pattern */
+/* ============================================
+   Utility Styles
+   ============================================ */
+
 @layer utilities {
   .bg-grid-white {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--lux-accent), #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px var(--lux-accent-glow), 0 0 80px rgba(139, 92, 246, 0.05);
   }
 }
 
-/* Custom Scrollbar */
-@layer base {
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
+/* ============================================
+   Reduced Motion
+   ============================================ */
 
-  ::-webkit-scrollbar-track {
-    @apply bg-black/20;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-purple-500/30 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-purple-500/50;
-  }
-
-  /* Firefox scrollbar */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(168, 85, 247, 0.3) rgba(0, 0, 0, 0.2);
-  }
-}
-
-/* Smooth Transitions */
-@layer base {
-  * {
-    @apply transition-colors duration-200;
-  }
-
-  button,
-  a {
-    @apply transition-all duration-200;
-  }
-}
-
-/* Loading Skeleton */
-@keyframes skeleton-loading {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@layer components {
-  .skeleton {
-    @apply animate-pulse bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 bg-[length:200%_100%];
-    animation: skeleton-loading 1.5s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
